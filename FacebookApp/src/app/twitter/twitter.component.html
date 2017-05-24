@@ -1,0 +1,20 @@
+<div class="container">
+  <form >
+    <div class="form-group row"><br><br>
+    <ng-container *ngIf="buttonFlag" >
+<button type="submit" class="btn btn-primary" (click)="Twitterlogin()"  >Twitter Login</button><br><br>
+<input type="password" #password placeholder="Enter PIN"><br><br>
+<button type="submit" class="btn btn-primary" (click)="PinSubmit(password?.value)">Submit Pin</button><br><br>
+<button type="submit" class="btn btn-primary" id="user" (click)="Twitterlogindetails()">User details</button><br><br>
+    </ng-container>
+    </div>
+     <div *ngIf="!buttonFlag">
+       <h1 align="center">Welcome {{twitter.name}}</h1><br><br>
+  <ul class="list-group">
+  <li class="list-group-item list-group-item-info">{{twitter.name}}</li>
+  <li class="list-group-item list-group-item-info">{{twitter.screen_name}}</li>
+  <li class="list-group-item list-group-item-info">{{twitter.location}}</li>
+  </ul>    
+  </div>
+</form>
+</div>

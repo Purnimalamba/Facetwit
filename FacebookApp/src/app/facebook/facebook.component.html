@@ -1,0 +1,23 @@
+<div class="container">
+  <form >
+    <div class="form-group row"><br><br>
+<button *ngIf="buttonFlag" type="submit" class="btn btn-primary" (click)="FBlogin()"  >Facebook Login</button><br><br>
+<button *ngIf="buttonFlag" type="submit" class="btn btn-primary" id="user" (click)="FBlogindetails()"   >User details</button>
+
+    </div>
+    <div *ngIf="flag">
+<h1 align="center">Welcome {{details.first_name}}</h1><br><br>
+
+<img src="https://graph.facebook.com/{{details.id}}/picture?type=large"/><br><br>
+<button align="right" class="btn btn-primary" (click)="post(postdetails.value)">What is in your mind?</button><br><br>
+<input #postdetails type="text" class="form-control"> <br><br>
+  <ul class="list-group">
+  <li class="list-group-item list-group-item-info">Email----------{{details.email}}</li>
+  <li class="list-group-item list-group-item-info">Gender----------{{details.gender}}</li>
+  <li class="list-group-item list-group-item-info">User ID----------{{details.id}}</li>
+  <li class="list-group-item list-group-item-info">Total Friends-------------{{details.friends}}</li>
+  <li class="list-group-item list-group-item-info">Total Post---------------{{details.post}}</li>
+  </ul>   
+    </div>
+</form>
+</div>
